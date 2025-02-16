@@ -60,7 +60,6 @@ public class PublicController {
         }
     }
 
-
     @PostMapping("/create-admin")   // although its not a good practice to create admin from public controller, it just for testing purpose
     public ResponseEntity<?> createAdmin(@RequestBody User user){
         return userService.saveEntry(user, "ADMIN");

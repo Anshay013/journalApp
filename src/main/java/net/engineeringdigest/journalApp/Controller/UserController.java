@@ -74,6 +74,14 @@ public class UserController {
         }
 
 
+    @GetMapping("/logout")
+    public ResponseEntity<?> logout() {
+        // simply invalidate the token of the current user logged in
+        // save in redis like token -> invalid
+        return null;
+    }
+
+
         @GetMapping
         public ResponseEntity<?> greeting() {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

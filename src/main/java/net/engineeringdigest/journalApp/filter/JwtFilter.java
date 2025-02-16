@@ -60,7 +60,9 @@ public class JwtFilter  extends OncePerRequestFilter{ // If a request comes to t
                 // because it was via HttpBasic(), but now JWT auth is needed to do this we have to set a filter to validate it.
             }
         }
-        // response.addHeader("admin", "admin");
+        response.addHeader("admin", "admin"); // we can also add headers to response.
+        // note this filter will be called before the control goes to endpoint fun (i.e PublicController)
+
         chain.doFilter(request, response); // in chain we sent the request and response ahead, for the filters that will come after the jwtFilter
         // so that now this JWT validation doesn't need to be done again and again in the same server.
     }
